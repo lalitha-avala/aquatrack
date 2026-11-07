@@ -1,0 +1,310 @@
+.app-shell {
+  background: var(--color-background);
+  min-width: 0;
+}
+
+.app-sidebar {
+  position: sticky;
+  top: 0;
+  width: var(--sidebar-width);
+  height: 100dvh;
+  flex-shrink: 0;
+  background: var(--color-sidebar);
+  border-right: 1px solid var(--color-sidebar);
+}
+
+.app-sidebar__header,
+.mobile-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  min-height: var(--header-height);
+  padding: var(--space-3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.app-shell__workspace {
+  min-width: 0;
+  min-height: 100dvh;
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  min-height: var(--header-height);
+  padding: var(--space-2) var(--space-3);
+  gap: var(--space-3);
+  background: var(--color-surface);
+  border-bottom: 3px solid var(--color-primary);
+}
+
+.app-header__lead,
+.app-header__titles {
+  min-width: 0;
+}
+
+.app-header__lead {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.app-header__eyebrow,
+.app-header__section,
+.app-header__date {
+  margin: 0;
+}
+
+.app-header__eyebrow {
+  color: var(--color-primary);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.app-header__section {
+  overflow: hidden;
+  color: var(--color-text-primary);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.app-header__date {
+  margin-left: auto;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: var(--color-surface-subtle);
+  color: var(--color-primary);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.app-shell__content {
+  width: 100%;
+  min-width: 0;
+  padding: var(--space-4);
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+  min-height: 2.75rem;
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.brand-lockup__mark {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  font-weight: 700;
+}
+
+.brand-lockup__text {
+  overflow: hidden;
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.app-sidebar__nav,
+.mobile-drawer__nav {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: var(--space-3);
+  overscroll-behavior: contain;
+}
+
+.navigation-menu,
+.navigation-group__items {
+  display: grid;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navigation-group {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.navigation-group__items {
+  margin-left: 1.15rem;
+  padding-left: var(--space-2);
+  border-left: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.navigation-group__items[hidden] {
+  display: none !important;
+}
+
+.navigation-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-text-inverse);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navigation-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-inverse);
+}
+
+.navigation-item.is-active {
+  background: var(--color-surface);
+  color: var(--color-primary);
+}
+
+.navigation-item.is-current {
+  color: var(--color-text-inverse);
+}
+
+.navigation-item__icon,
+.navigation-group__chevron {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+.navigation-item__label {
+  min-width: 0;
+}
+
+.navigation-group__chevron {
+  margin-left: auto;
+  transition: transform 150ms ease;
+}
+
+.navigation-group__chevron.is-expanded {
+  transform: rotate(180deg);
+}
+
+.mobile-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-drawer);
+}
+
+.mobile-drawer[hidden] {
+  display: none !important;
+}
+
+.mobile-drawer__backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border: 0;
+  background: var(--color-overlay);
+}
+
+.mobile-drawer__panel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: min(19rem, calc(100vw - 2.75rem));
+  height: 100%;
+  background: var(--color-sidebar);
+  box-shadow: var(--shadow-drawer);
+}
+
+.app-sidebar .brand-lockup,
+.mobile-drawer__panel .brand-lockup,
+.app-sidebar .aq-icon-button,
+.mobile-drawer__panel .aq-icon-button {
+  color: var(--color-text-inverse);
+}
+
+.app-sidebar .brand-lockup__mark,
+.mobile-drawer__panel .brand-lockup__mark {
+  background: var(--color-text-inverse);
+  color: var(--color-primary);
+}
+
+.app-sidebar .aq-icon-button:hover,
+.mobile-drawer__panel .aq-icon-button:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-text-inverse);
+}
+
+.app-sidebar :focus-visible,
+.mobile-drawer__panel :focus-visible {
+  outline-color: var(--color-text-inverse);
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .app-sidebar {
+    width: 14.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .app-header {
+    padding-inline: var(--space-5);
+  }
+
+  .app-shell__content {
+    padding: var(--space-5);
+  }
+}
+
+@media (min-width: 992px) {
+  .app-shell.is-sidebar-collapsed .app-sidebar {
+    width: var(--sidebar-width-compact);
+  }
+
+  .app-shell.is-sidebar-collapsed .app-sidebar__header {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .app-shell.is-sidebar-collapsed .navigation-item {
+    justify-content: center;
+    padding-inline: 0.375rem;
+  }
+
+  .app-shell.is-sidebar-collapsed .navigation-item__label,
+  .app-shell.is-sidebar-collapsed .navigation-group__chevron,
+  .app-shell.is-sidebar-collapsed .brand-lockup__text {
+    display: none;
+  }
+
+  .app-shell.is-sidebar-collapsed .navigation-item.is-active {
+    box-shadow: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .app-shell__content {
+    padding: var(--space-6);
+  }
+}
