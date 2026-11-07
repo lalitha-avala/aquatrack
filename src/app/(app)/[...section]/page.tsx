@@ -5,7 +5,7 @@ import { PageContainer } from "@/components/ui/PageContainer";
 import { buildPathname, findNavigationLink } from "@/lib/navigation";
 
 interface AppSectionPageProps {
-  params: Promise<{ section?: string[] }>;
+  params: Promise<{ section: string[] }>;
 }
 
 export async function generateMetadata({

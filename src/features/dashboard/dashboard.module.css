@@ -1,0 +1,261 @@
+.dashboard {
+  display: grid;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.welcome,
+.panel {
+  min-width: 0;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.eyebrow,
+.panelNote,
+.meta,
+.location {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+}
+
+.eyebrow {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.title,
+.panelTitle,
+.activityTitle,
+.taskTitle {
+  margin: 0;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.title {
+  margin-top: var(--space-1);
+  font-size: var(--text-xl);
+  line-height: 1.2;
+}
+
+.overview {
+  max-width: 40rem;
+  margin: var(--space-2) 0 0;
+  color: var(--color-text-secondary);
+}
+
+.meta {
+  margin-top: var(--space-3);
+}
+
+.statIcon {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.statIcon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.statLabel,
+.statDescription {
+  margin: var(--space-3) 0 0;
+}
+
+.statLabel {
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  font-weight: 700;
+}
+
+.statValue {
+  margin: var(--space-1) 0 0;
+  color: var(--color-text-primary);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.statDescription {
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+}
+
+.panelHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.panelTitle {
+  font-size: var(--text-lg);
+}
+
+.panel > .panelTitle {
+  margin-bottom: var(--space-4);
+}
+
+.panelNote {
+  margin-top: var(--space-1);
+}
+
+.recordList,
+.activityList,
+.taskList {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.record,
+.task {
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-subtle);
+}
+
+.recordTitle,
+.activityTitle,
+.taskTitle {
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
+.detailGrid,
+.taskMeta {
+  display: grid;
+  gap: var(--space-2);
+  margin: var(--space-3) 0 0;
+}
+
+.detailGrid div,
+.taskMeta {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.detailGrid dt,
+.taskTime {
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+}
+
+.detailGrid dd {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-weight: 600;
+  text-align: right;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: var(--text-sm);
+}
+
+.table th {
+  color: var(--color-text-secondary);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.table td,
+.table th {
+  padding: 0.75rem;
+  border-color: var(--color-border);
+  vertical-align: middle;
+}
+
+.activityList {
+  gap: 0;
+}
+
+.activityItem {
+  display: grid;
+  grid-template-columns: 1rem 1fr;
+  column-gap: var(--space-3);
+}
+
+.activityRail {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.activityRail::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-border);
+}
+
+.activityItem:last-child .activityRail::before {
+  background: transparent;
+}
+
+.activityMarker {
+  position: relative;
+  z-index: 1;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-top: 0.35rem;
+  border: 2px solid var(--color-primary);
+  border-radius: 999px;
+  background: var(--color-surface);
+}
+
+.activityBody {
+  padding-bottom: var(--space-4);
+}
+
+.taskTime {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+@media (min-width: 768px) {
+  .dashboard {
+    gap: var(--space-5);
+  }
+
+  .welcome {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .title {
+    font-size: var(--text-2xl);
+  }
+
+  .panelHeader {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
